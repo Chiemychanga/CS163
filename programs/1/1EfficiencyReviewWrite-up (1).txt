@@ -1,0 +1,25 @@
+﻿Larry Chiem
+Efficiency Review Write-up  Program 1
+04/18/2016
+
+
+The data structure performed well for the airport itinerary and external file read in. As I was reading in from the external file, I was able to allocate a linked linear list with all of the time delay from gate to gate. This was convenient as it allows me to easily traverse and to search for matches. It was also efficient inserting new nodes into the beginning for each new airport read in from the external file. The only bad thing about this was that I didn’t sort the linked linear list by airport names as I was reading in from the external file which was unsorted. 
+        Before the client program started, I prompted the user to figure out how many trips they were making, which basically allowed me to know the size of the array so that I could create it. Once the client program started to enter in their itinerary, I was able to insert their trips into the array of linked list. Each trip was nicely separated into a separate array until there were no more trips on the client’s itinerary. All of this was done in a do while loop that repeated if any errors occured, such as not having enough time from gate to gate, or if the name of the airport was not on the external file(which I checked by traversing and searching the linear linked list).
+
+
+A sorted linked linear list for the major airports read in from the external file  would have been more efficient for the searching, but I just used an unsorted linked linear list for simplicity sakes. But other than that, I believe using a linked linear list for the external file and the array of linked list for the itinerary was fine. That may be what they use in the airplane programs nowadays. 
+
+
+What was efficient about my design was accessing any array element(which trip) which is fast access. If I wanted to access the whole itinerary, I could go through the whole array. But if I wanted to just see the last trip, I just access the array[size-1]. Accessing the linked list inside is a whole different story as it is relatively sorted. 
+
+
+What was not efficient was the linear linked list holding the airports from the external file because it was unsorted (non-alphabetically). It was actually just sorted based off as it was read from the file. So everytime the client program wanted to enter a starting, a layover, or a destination airport, it’d have to go through best case scenario: the first node in the linear linked list, or worst case scenario, the last node in the list to find a match because it was unsorted. 
+
+
+I would have ordered my linear linked list created from reading in the external file, and I probably would have added a doubly linked list so that it could find in the list the airport based off the alphabetical order. 
+
+
+Instead of making each array element a trip, I could have just done each element array as a different day, that way it’d be a little more organized with dates and times. I was not sure how to figure out inputting times in C++ for military hours, or standard 12:00 times, so the way how the program read in times from the client was incorrect. 
+
+
+If I could have designed the program to be beautiful, it would have made displaying the itinerary a lot more appealing. It could have been separated into boxes and a linked list with the name, departure and arrival times so it was organized. It’d be nice to learn how to design that one day in upper level courses or outside of school.
