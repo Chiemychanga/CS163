@@ -58,7 +58,7 @@ class stack
         int pop(Package & to_pop);
         int peek(Package & to_peek);
         int display_all(node * head);
-        int display(void)const;
+        int display(void);
     private:
         node * head;
         int top_index;

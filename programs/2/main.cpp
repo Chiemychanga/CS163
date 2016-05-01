@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-    node * head = NULL;
+//    node * head = NULL;
     Package add_package;     
     stack Stack;   
 
@@ -27,7 +27,7 @@ int main()
        add_package.create_entry(number,number,i);
        Stack.push(add_package);
     }
-    Stack.display_all(head);
+    Stack.display();
 
     return 0;    
 }

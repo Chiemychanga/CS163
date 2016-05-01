@@ -132,9 +132,9 @@ int stack::push(const Package & to_push)
     return 1;
 }
 
-int stack::display(void)const
+int stack::display(void)
 {
-    if(!head) return 0;
+/*    if(!head) return 0;
     node * current = head;
     while(current)
     {
@@ -143,6 +143,8 @@ int stack::display(void)const
         current = current->next;
     }
     return 1;
+    */
+    return display_all(head);
 }
 
 int stack::display_all(node * head)
