@@ -1,0 +1,5 @@
+hash function:sum of each character % size of array:2,3,4:3,100,102,120:1
+linear linked list:sorted or unsorted:3,1,2,3:3,600,601,702:0
+binary search trees:always sorted:2,5,6:4,800,820,831,842:1
+arrays:needs a terminating null:1,1:1,20:0
+cll:enqueue at rear, dequeue at rear->next:1,1:1,1:0

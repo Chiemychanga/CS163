@@ -1,10 +1,11 @@
-/* clarry@pdx.edu
+/* Larry Chiem 
  * CS163
  * Program 2 
  * April 28, 2016
  *
  * functions.h
- * This file holds 
+ * This file holds all of the classes, structs, and
+ * prototypes that will be used in the main.cpp.
  */
 
 #include <iostream>
@@ -16,9 +17,12 @@ using namespace std;
 
 const int SIZE_ARRAY = 5;
 
+
+
 /* Struct packageinfo 
- * Task:
- * */
+ * Task: Keeps track of the data being entered between the client
+ * and ADTs. In the private, it holds a
+ * two dynamically allocated char arrays, and an int.*/
 class Package
 {
     public:
@@ -35,18 +39,46 @@ private:
 };
 
 bool again();
-/* struct node
- * Task: This is the struct used for the LLL
- *. */
+
+/* struct qnode 
+ * Task: qnode(Queue's node) holds an object(delivery) to Package
+ * and a next pointer to qnode.*/
+struct qnode
+{
+    Package delivery; 
+    qnode * next;
+};
+
+/* class queue 
+ * Task: This Queue ADT holds operations and a rear
+ * pointer to qnode.*/
+class queue
+{
+    public:
+        queue(void);
+        ~queue(void);
+        int enqueue(const Package & to_rear);//Enqueue to the rear.
+        int dequeue();//Dequeue from the front.
+        int display_all(void)const;//Displays the CLL.
+
+    private:
+        qnode * rear;
+};
+
+/* struct node 
+ * Task: LLL of Array: Holds a_package pointer to Package, 
+ * an int position (position array) and a next pointer to node. */
 struct node
 {
     Package * a_package;
+    int position;
     node * next;
 };
 
 /* class stack 
- * Task: This class manages the LLL with functions and
- * holds the head pointer to struct node.*/
+ * Task: This stack ADT manages the LLL of arrays
+ * with functions. In the private, it  holds the 
+ * head pointer to struct node.*/
 class stack 
 {
     public:
